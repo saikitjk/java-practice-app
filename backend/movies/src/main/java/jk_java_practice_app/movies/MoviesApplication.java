@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MoviesApplication {
 
+
+	// starting point for the execution of a Java application
 	public static void main(String[] args) {
 		SpringApplication.run(MoviesApplication.class, args);
 	}

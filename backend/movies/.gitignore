@@ -37,3 +37,4 @@ application.properties
 
 
 .DS_Store
+.env
