@@ -12,12 +12,9 @@ public class MoviesApplication {
 
 	// starting point for the execution of a Java application
 	public static void main(String[] args) {
+
 		SpringApplication.run(MoviesApplication.class, args);
 	}
 
-	@GetMapping("/") // GetMapping Method annotation: When a GET request is made to "/", the apiRoot() method is invoked,
-	public String apiRoot(){
-		return "Hello World";
-	}
 
 }

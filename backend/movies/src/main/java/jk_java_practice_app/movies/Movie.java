@@ -17,16 +17,16 @@ import java.util.List;
 @NoArgsConstructor //This constructor initializes all fields with default values
 public class Movie {
     @Id
-
     private ObjectId id;
     private String imdbId;
     private String title;
     private String releaseDate;
     private String trailerLink;
     private String poster;
-    private List<String> genres;
     private List<String> backdrops;
+    private List<String> genres;
     @DocumentReference // manual reference relationship. Database will store only the ids of the review, and the reviews will be in a separate document collection
     private List<Review> reviewIds; // embedded relationship
+
 
 }
