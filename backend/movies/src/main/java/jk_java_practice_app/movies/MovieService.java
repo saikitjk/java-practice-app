@@ -20,11 +20,17 @@ public class MovieService {
         return movies;
 
     }
+//    Search by id
+//    public Optional<Movie> singleMovieById(ObjectId id){ // Optional is to handle return is null situation
+//        Optional<Movie> movie = movieRepository.findById(id);
+//        System.out.println("Found movie: " + movie.toString());
+//        return movie;
+//    }
 
-    public Optional<Movie> singleMovie(ObjectId id){ // Optional is to handle return is null sitation
-        Optional<Movie> movie = movieRepository.findById(id);
+    //    Search by imdbId
+    public Optional<Movie> findMovieByImdbId(String imdbId){ // Optional is to handle return is null situation
+        Optional<Movie> movie = movieRepository.findMovieByImdbId(imdbId);
         System.out.println("Found movie: " + movie.toString());
         return movie;
     }
-
 }
