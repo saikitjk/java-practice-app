@@ -2,6 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 import api from './api/axiosConfig.js';
 import {useState, useEffect} from 'react';
+import Layout from './components/layout.js';
+import {Routes, Route} from 'react-router-dom';
+import Home from './components/home/home.js';
 
 function App() {
 
@@ -11,11 +14,10 @@ function App() {
 
     try{
       const response = await api.get("/api/v1/movies");
-      console.log(response.data);
       setMovies(response.data);
     }
     catch(err){
-      console.log('err',err)
+      console.log('err',err);
     }
 
   }
@@ -27,7 +29,11 @@ function App() {
 
   return (
     <div className="App">
-
+      <Routes>
+        <Route path="/" element={<Layout />}>
+         <Route path="/" element={<Home />}></Route>
+        </Route>
+      </Routes>
     </div>
   );
 }
