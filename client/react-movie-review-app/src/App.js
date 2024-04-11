@@ -6,6 +6,7 @@ import Layout from './components/layout.js';
 import {Routes, Route} from 'react-router-dom';
 import Home from './components/home/home.js';
 
+
 function App() {
 
   const [movies, setMovies] = useState();
@@ -31,7 +32,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Layout />}>
-         <Route path="/" element={<Home />}></Route>
+         <Route path="/" element={<Home movies={movies}/>}/>
         </Route>
       </Routes>
     </div>
