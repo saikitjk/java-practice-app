@@ -8,6 +8,7 @@ import Home from './components/home/home.js';
 import Header from './components/header/header.js';
 import Trailer from './components/trailer/trailer.js';
 import Reviews from './components/reviews/reviews.js';
+import NotFound from './components/notFound/notFound.js';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
 
   }
 
+  // trigger when review component is loaded
   const getMovieData = async (movieId)=>{
     try{
       const response = await api.get(`/api/v1/movies/${movieId}`);
@@ -53,7 +55,7 @@ function App() {
          <Route path="/" element={<Home movies={movies}/>}></Route>
          <Route path="/Trailer/:ytTrailerId" element={<Trailer />} ></Route>
          <Route path="/Reviews/:movieId" element ={<Reviews getMovieData = {getMovieData} movie={movie} reviews ={reviews} setReviews = {setReviews} />}></Route>
-
+        <Route path="*" element={<NotFound/>}></Route>
         </Route>
       </Routes>
     </div>
